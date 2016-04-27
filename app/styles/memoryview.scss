@@ -69,7 +69,7 @@ a, a:visited {
     -webkit-transition: all .3s;
     padding: 5px;
 }
-#memoryview a:hover {
+#memoryview .popup a:hover {
     color: #000;
     background: #BBB;
     text-shadow: none;
@@ -265,4 +265,12 @@ div#loader {
     left: 0;
     right: 0;
     top: 320px;
+}
+
+#controls {
+  padding-top: 15px;
+}
+
+#back-to-map {
+  font-size: 30px;
 }

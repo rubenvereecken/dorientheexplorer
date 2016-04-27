@@ -15,6 +15,7 @@ var Hubbers = [
 {"name":"Ward", "avatar_url":"/images/memory/Ward.png"}
 ];
 
+var numCards = 16;
 
 var matchingGame = {
     elapsedTime: 0
@@ -23,7 +24,7 @@ var matchingGame = {
 matchingGame.deck = []
 
 function getHubbers(callback) {
-    window.data = shuffle(Hubbers).slice(0,1);
+    window.data = shuffle(Hubbers).slice(0,numCards/2);
     callback(window.data);
 }
 
@@ -112,7 +113,13 @@ function gameover() {
 		"savedTime": now,
 		"score": matchingGame.elapsedTime
 	};
-	localStorage.setItem("last-score", JSON.stringify(obj));
+  // update high score
+  if (lastScoreObj.score > obj.score) {
+    localStorage.setItem("last-score", JSON.stringify(obj));
+    $('.ribbon').removeClass('hide');
+  } else {
+    $('.ribbon').addClass('hide');
+  }
 
 	if (lastElapsedTime == 0 || matchingGame.elapsedTime < lastElapsedTime) {
 		$(".ribbon").removeClass("hide");
@@ -134,7 +141,6 @@ function countTimer() {
 var template = {};
 
 $(() => {
-  template.card = $('.card:first-child').remove(); 
 });
 
 function commenceTheMemory(){
@@ -145,6 +151,7 @@ function commenceTheMemory(){
     var $loader = $("#loader");
 
     $cards.hide();
+    $cards.children().remove();
     getHubbers(function (hubbers) {
         matchingGame.deck = [];
         matchingGame.elapsedTime = 0;
@@ -152,7 +159,7 @@ function commenceTheMemory(){
             matchingGame.deck.push(hubbers[i], hubbers[i]);
         }
         shuffle(matchingGame.deck);
-        for(var i=0;i<2;i++){
+        for(var i=0;i<numCards;i++){
             template.card.clone().appendTo($cards);
         }
         $cards.children().each(function(index) {
@@ -179,3 +186,17 @@ function commenceTheMemory(){
         matchingGame.timer = setInterval(countTimer, 1000);
     });
 }
+
+function stopTheMemory() {
+	clearInterval(matchingGame.timer);
+  $('#memoryview').hide()
+
+};
+
+$(() => {
+  $('#back-to-map').click(() => {
+    stopTheMemory();
+    $('#mapview').show();
+  });
+  template.card = $('.card:first-child').remove(); 
+});
