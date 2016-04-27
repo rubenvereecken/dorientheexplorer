@@ -23,8 +23,8 @@ var matchingGame = {
 matchingGame.deck = []
 
 function getHubbers(callback) {
-    window.data = Hubbers;
-    callback(Hubbers);
+    window.data = shuffle(Hubbers).slice(0,1);
+    callback(window.data);
 }
 
 // http://stackoverflow.com/a/2450976/1420197
@@ -169,6 +169,7 @@ function commenceTheMemory(){
                 .css("background", "#efefef url(" + Hubber.avatar_url + ")")
                 .css("background-size", "128px 128px")
 
+            $this.attr('data-pattern', Hubber.name);
             $this.find(".name").text(Hubber.name);
 
             $this.click(selectCard);
