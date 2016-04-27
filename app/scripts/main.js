@@ -56,7 +56,6 @@ $(() => {
   })
 
   $('#videoview').hide();
-  // $('#mapview').show();
-  // $('#memoryview').show();
-  commenceTheMemory();
+  $('#mapview').show();
+  // commenceTheMemory();
 });
