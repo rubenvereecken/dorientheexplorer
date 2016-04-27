@@ -1,0 +1,69 @@
+#mapcontainer {
+  position: relative;
+  width: 1024px;
+  height: 768px;
+  // width: 1300px;
+  // height: 900px;
+  margin: auto;
+  top: 8%;
+}
+
+#doramap {
+  position: relative;
+}
+
+#doramapimg {
+  width: 100%;
+}
+
+.glow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+
+area {
+  outline: none;
+}
+
+#poster {
+  width: 100%;
+}
+
+#mapview {
+  height: 100%;
+  margin: 0;
+  display: none;
+}
+
+#tree-text {
+  left: 688px;
+  top: 275px;
+}
+
+#forest-text {
+  left: 688px;
+  top: 275px;
+}
+
+#bridge-text {
+  left: 688px;
+  top: 275px;
+}
+
+#tree-text, #bridge-text, #forest-text {
+  position: absolute;
+  font-size: 36px;
+  font-family: "Slapstick Comic";
+  color: white;
+   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+   -webkit-text-stroke-width: 2px;
+   -webkit-text-stroke-color: black;
+   display: none;
+}
+
+#arrow {
+  position: absolute;
+  display: none;
+}

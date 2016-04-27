@@ -1,0 +1,32 @@
+#videoview {
+  margin: 0;
+}
+
+#videoview {
+  margin: auto;
+  width: 960px;
+  top: 20%;
+  position: relative;
+  margin-bottom: -20%;
+}
+
+#frame {
+  // height: 100%;
+  width: 100%;
+}
+
+#skip {
+  margin-left: auto;
+  width: 0px;
+  font-size: 32px;
+  text-decoration: none;
+  color: #EEE;
+  display: block;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+#btnwrapper {
+  width: 100%;
+}

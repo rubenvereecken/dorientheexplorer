@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>boiler</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:400,700" rel="stylesheet" type="text/css" >
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/mapview.css">
+    <link rel="stylesheet" href="styles/videoview.css">
+    <link rel="stylesheet" href="styles/memoryview.css">
+    <!-- endbuild -->
+    
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div id="videoview">
+      <img id="frame" src="/images/frame.png" alt="">
+      <div id="btnwrapper">
+        <a id="skip" href="#">Skip</a>
+      </div>
+    
+    </div>
+    
+    <div id="mapview">
+      <div id="mapcontainer">
+        <img src="/images/bg.png" alt="" usemap="#doramap" id="doramapimg">
+        <img id="bridge-glow" class="glow" src="/images/bridge_glow.png">
+        <img id="tree-glow" class="glow" src="/images/tree_glow.png" alt="">
+        <img id="forest-glow" class="glow" src="/images/forest_glow.png" alt="">
+        <p id="tree-text">De poster</p>
+        <p id="forest-text">Leer Ons Kennen</p>
+        <p id="bridge-text">Praesidiumspel</p>
+        <img id="arrow" src="/images/arrow.png" height="90px">
+      </div>
+      <map name="doramap" id="#doramap">
+        <area id="tree-area"  alt="" shape="poly" coords="676,80,713,61,762,60,805,59,848,72,873,85,884,121,879,146,865,180,836,197,803,207,808,242,846,261,831,275,687,269,728,241,736,217,717,197,667,170,655,137" />
+        <area id="forest-area" shape="poly" coords="147,305,189,278,275,259,388,237,512,237,581,243,648,283,670,305,671,325,656,345,617,370,620,402,554,413,370,412,304,416,178,405,204,381,156,360,145,336" />
+        <area id="bridge-area" shape="poly" coords="275,533,275,577,359,608,515,556,514,519,440,506" />
+      </map>
+    </div>
+
+    <div id="poster-modal" class="modal fade">
+      <div class="modal-lg modal-dialog">
+        <div class="modal-content">
+          <img id="poster" src="/images/poster.jpg" alt="">
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div>
+
+    <div id="memoryview">
+      <header>
+        <h1>Praesidium Matching Game</h1>
+      </header>
+      <div id="timer">
+          Elapsed time: <span id="elapsed-time">00:00</span>
+      </div>
+      <section id="game">
+          <div id="cards">
+              <div class="card">
+                  <div class="face front"></div>
+                  <div class="face back">
+                      <div class="name"></div>
+                      <div class="login"></div>
+                  </div>
+              </div>
+          </div>
+          <div id="loader">
+              <div class="three-quarters-loader">
+                Loading…
+              </div>
+          </div>
+      </section>
+      <section id="popup" class="hide">
+          <div id="popup-bg"></div>
+          <div id="popup-box">
+              <div class="ribbon hide">
+                  <div class="ribbon-body">
+                      <span>Record</span>
+                  </div>
+                  <div class="triangle"></div>
+              </div>
+              <div id="popup-box-content">
+                  <!--  -->
+                  <!-- <audio id="buttonactive">
+                      <source src="media/06-level-complete.mp3"/>
+                      <source src="media/button_active.ogg"/>
+                      </audio> -->
+                      <!--  -->
+                      <h1>Het lukte, het lukte!</h1>
+                      <p>Uw Score:</p>
+                      <p><span class='score'>13</span></p>
+                      <p>
+                      <small>
+                          Vorige Score: <span class='last-score'>20</span><br>
+                          Behaald op: <span class='saved-time'>blub</span>
+                      </small>
+                      </p>
+                      <a class="quit-memory" href="#">Terug naar kaart</a>
+              </div>
+          </div>
+      </section>
+    </div>
+    
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/plugins.js -->
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
+    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/memory.js"></script>
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
