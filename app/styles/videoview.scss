@@ -1,32 +1,40 @@
 #videoview {
-  margin: 0;
+  // margin: 0;
 }
 
-#videoview {
-  margin: auto;
+#videocontainer {
   width: 960px;
-  top: 20%;
-  position: relative;
-  margin-bottom: -20%;
+  height: 590px;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+#video {
+  position: absolute;
+  // top: 90px;
+  // left: 50px;
+  z-index: 1000;
 }
 
 #frame {
+  position: absolute;
   // height: 100%;
-  width: 100%;
+  width: 960px;
 }
 
 #skip {
-  margin-left: auto;
-  width: 0px;
+  position: absolute;
+  // margin-left: auto;
+  // margin-right: 0px;
+  right: 0px;
+  bottom: 0px;
   font-size: 32px;
-  text-decoration: none;
-  color: #EEE;
   display: block;
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 #btnwrapper {
   width: 100%;
+  bottom: 0px;
 }

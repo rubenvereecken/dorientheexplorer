@@ -47,6 +47,7 @@ $(() => {
   // $('#poster-modal').modal();
   $('#skip').click(() => {
     $('#videoview').hide();
+    $('#video').remove();
     $('#mapview').show();
   });
 
@@ -55,7 +56,7 @@ $(() => {
     $('#mapview').show();
   })
 
-  $('#videoview').hide();
-  $('#mapview').show();
+  // $('#videoview').remove();
+  // $('#mapview').show();
   // commenceTheMemory();
 });

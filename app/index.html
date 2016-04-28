@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>boiler</title>
+    <title>Dorien The Explorer</title>
 
     <link href="https://fonts.googleapis.com/css?family=Orbitron:400,700" rel="stylesheet" type="text/css" >
     <!-- Place favicon.ico in the root directory -->
+    <link href="/favicon.gif" rel="icon" type="image/x-icon">
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
@@ -28,9 +29,13 @@
     <![endif]-->
 
     <div id="videoview">
-      <img id="frame" src="/images/frame.png" alt="">
-      <div id="btnwrapper">
-        <a id="skip" href="#">Skip</a>
+      <div id="videocontainer">
+        <!-- <iframe id="video" src="https://vid.me/e/aBjd?autoplay=1&amp;stats=1&amp;tools=1" width="640" height="360" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen scrolling="no"></iframe> -->
+        <iframe id="video" src="https://player.vimeo.com/video/164479660?autoplay=1&color=ffffff&title=0&byline=0&portrait=0" width="960" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <!-- <img id="frame" src="/images/frame.png" alt=""> -->
+        <div id="btnwrapper">
+          <a id="skip" href="#">Skip</a>
+        </div>
       </div>
     
     </div>

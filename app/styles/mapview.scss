@@ -42,13 +42,14 @@ area {
 }
 
 #forest-text {
-  left: 688px;
-  top: 275px;
+  left: 280px;
+  top: 430px;
 }
 
 #bridge-text {
-  left: 688px;
-  top: 275px;
+  left: 358px;
+  top: 588px;
+  transform: rotate(-18deg);
 }
 
 #tree-text, #bridge-text, #forest-text {
@@ -68,5 +69,5 @@ area {
 }
 
 .modal-lg {
-  width: 1100px;
+  width: 60%;
 }
