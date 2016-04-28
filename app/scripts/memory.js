@@ -12,7 +12,9 @@ var Hubbers = [
 {"name":"Roxan", "avatar_url":"/images/memory/Roxan.png"},
 {"name":"Sofie", "avatar_url":"/images/memory/Sofie.png"},
 {"name":"Vincent", "avatar_url":"/images/memory/Vincent.png"},
-{"name":"Ward", "avatar_url":"/images/memory/Ward.png"}
+{"name":"Ward", "avatar_url":"/images/memory/Ward.png"},
+  {"name": "Snorien", "avatar_url":"/images/memory/blub/Snorien.png"},
+  {"name": "Piet", "avatar_url":"/images/memory/blub/piet.png"}
 ];
 
 var numCards = 16;
